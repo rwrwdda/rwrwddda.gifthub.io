@@ -3,461 +3,480 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barber Life | Honest Reviews & Style</title>
+    <title>Rok Barber | Honest Cuts & Barber Life</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         :root {
             --primary: #2c3e50;
             --secondary: #e74c3c;
             --accent: #f39c12;
             --light: #ecf0f1;
             --dark: #1a252f;
-            --transition: all 0.3s ease;
+            --text: #2c3e50;
+            --text-light: #7f8c8d;
         }
-
+        
         body {
-            background-color: #f8f9fa;
-            color: var(--primary);
+            background-color: #fafafa;
+            color: var(--text);
             line-height: 1.6;
+            overflow-x: hidden;
         }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 1.5rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        
+        .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo i {
-            font-size: 2.2rem;
-            color: var(--accent);
-        }
-
-        .logo h1 {
-            font-weight: 700;
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            padding: 0.5rem 0;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: var(--transition);
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(26, 37, 47, 0.9)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 6rem 2rem;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 0.8rem 2.2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            border: 2px solid var(--secondary);
-        }
-
-        .btn:hover {
-            background: transparent;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Section Styling */
+        
         section {
-            padding: 5rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 80px 0;
         }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
+        
+        h1, h2, h3 {
+            font-weight: 700;
+            margin-bottom: 20px;
             color: var(--primary);
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
         }
-
-        .section-header h2::after {
+        
+        h1 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1:after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--accent);
+            background: var(--secondary);
             border-radius: 2px;
         }
-
-        .section-header p {
-            color: #7f8c8d;
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 1.5rem auto 0;
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
         }
-
-        /* Reviews Section */
-        .reviews-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
-
-        .review-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: var(--transition);
-        }
-
-        .review-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .review-header {
-            padding: 1.5rem;
-            background: var(--primary);
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
             color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary);
+            margin-top: 15px;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
         }
-
-        .avatar {
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .hero h1:after {
+            background: var(--accent);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: var(--light);
+        }
+        
+        /* Reviews Section */
+        .reviews {
+            background: white;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .review-card {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .review-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .review-avatar {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        .client-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .client-info p {
-            opacity: 0.8;
-            font-size: 0.95rem;
-        }
-
-        .review-body {
-            padding: 1.8rem;
-        }
-
-        .review-body p {
-            margin-bottom: 1.2rem;
-            color: #2c3e50;
-        }
-
-        .rating {
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
-
-        /* Tools Section */
-        .tools-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .tool-item {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: var(--transition);
-        }
-
-        .tool-item:hover {
-            transform: scale(1.03);
-        }
-
-        .tool-img {
-            height: 220px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .tool-info {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .tool-info h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-            color: var(--primary);
-        }
-
-        /* Videos Section */
-        .videos-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .video-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: var(--transition);
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .video-thumbnail {
-            position: relative;
-            height: 200px;
-            background: linear-gradient(45deg, #3498db, #2c3e50);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .play-btn {
-            width: 70px;
-            height: 70px;
-            background: rgba(231, 76, 60, 0.9);
-            border-radius: 50%;
+            background: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.8rem;
-            transition: var(--transition);
+            font-size: 1.5rem;
+            margin-right: 15px;
         }
-
-        .play-btn:hover {
-            background: var(--secondary);
-            transform: scale(1.1);
-        }
-
-        .video-info {
-            padding: 1.5rem;
-        }
-
-        .video-info h3 {
+        
+        .review-info h3 {
             font-size: 1.4rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .review-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: var(--accent);
+            margin: 10px 0;
+        }
+        
+        /* Tools Section */
+        .tools {
+            background: var(--light);
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .tool-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .tool-content {
+            padding: 20px;
+        }
+        
+        .tool-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Videos Section */
+        .videos {
+            background: white;
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .video-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .video-placeholder {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .video-content {
+            padding: 20px;
+        }
+        
+        .video-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Appointments Section */
+        .appointments {
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+        }
+        
+        .appointment-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
             color: var(--primary);
         }
-
-        .video-info p {
-            color: #7f8c8d;
-            font-size: 0.95rem;
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
         }
-
+        
+        input:focus, textarea:focus, select:focus {
+            border-color: var(--secondary);
+            outline: none;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+        
         /* Footer */
         footer {
             background: var(--dark);
             color: white;
-            padding: 3rem 5% 2rem;
+            padding: 40px 0 20px;
             text-align: center;
         }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
+        
         .social-links {
             display: flex;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
+            justify-content: center;
+            margin: 20px 0;
         }
-
+        
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 50px;
             height: 50px;
-            border-radius: 50%;
             background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin: 0 10px;
             color: white;
-            font-size: 1.4rem;
-            transition: var(--transition);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
         }
-
+        
         .social-links a:hover {
             background: var(--secondary);
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
-
+        
         .copyright {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.7);
-            font-size: 0.95rem;
-            width: 100%;
+            margin-top: 30px;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
         }
-
+        
         /* Responsive Design */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            nav ul {
-                gap: 1.2rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .hero h2 {
+            h1 {
                 font-size: 2.5rem;
             }
             
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
             .hero p {
-                font-size: 1.1rem;
-            }
-            
-            section {
-                padding: 3.5rem 5%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 4rem 1.5rem;
-            }
-            
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            .section-header h2 {
-                font-size: 2rem;
+                font-size: 1.2rem;
             }
             
             nav ul {
-                gap: 1rem;
+                display: none;
             }
             
-            nav a {
-                font-size: 1rem;
+            .mobile-menu-btn {
+                display: block;
+                font-size: 1.5rem;
+                color: var(--primary);
+                cursor: pointer;
             }
+            
+            .appointment-container {
+                padding: 25px;
+            }
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="header-content">
-            <div class="logo">
-                <i class="fas fa-cut"></i>
-                <h1>BARBER LIFE</h1>
+        <div class="container header-container">
+            <div class="logo">ROK<span>BARBER</span></div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
             </div>
             <nav>
                 <ul>
                     <li><a href="#reviews">Reviews</a></li>
                     <li><a href="#tools">Tools</a></li>
                     <li><a href="#videos">Videos</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#appointments" class="btn">Book Now</a></li>
                 </ul>
             </nav>
         </div>
@@ -466,29 +485,28 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h2>Honest Cuts, Real Reviews</h2>
-            <p>Where barber life meets authenticity. No fluff, just the real deal.</p>
-            <a href="#reviews" class="btn">See What They Say</a>
+            <h1>Honest Cuts & Barber Life</h1>
+            <p>Where every haircut tells a story and every client becomes family.</p>
+            <a href="#appointments" class="btn">Book Your Cut</a>
         </div>
     </section>
 
     <!-- Reviews Section -->
-    <section id="reviews">
-        <div class="section-header">
-            <h2>Client Reviews</h2>
-            <p>Real people, real experiences, no filters</p>
-        </div>
-        <div class="reviews-container">
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="avatar">MJ</div>
-                    <div class="client-info">
-                        <h3>Michael Johnson</h3>
-                        <p>Regular Client • 2 Years</p>
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2>What My Clients Say</h2>
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="review-info">
+                            <h3>Mike Johnson</h3>
+                            <p>Regular Client • 2 Years</p>
+                        </div>
                     </div>
-                </div>
-                <div class="review-body">
-                    <p>"Best fade in town! Consistently delivers sharp lines and perfect blends. My go-to for years."</p>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -496,19 +514,41 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
+                    <p>"Rok doesn't just cut hair - he creates confidence. His attention to detail is unmatched, and he always remembers exactly how I like my fade. Best barber in town!"</p>
                 </div>
-            </div>
-            
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="avatar">TS</div>
-                    <div class="client-info">
-                        <h3>Tyler Smith</h3>
-                        <p>New Client • First Visit</p>
+                
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="review-info">
+                            <h3>Sarah Williams</h3>
+                            <p>New Client • 3 Months</p>
+                        </div>
                     </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"As a woman who loves a sharp undercut, finding Rok was a game-changer. He listens, understands my vision, and executes perfectly every time. Plus, his shop has the best vibes!"</p>
                 </div>
-                <div class="review-body">
-                    <p>"Walked in looking rough, walked out feeling like a million bucks. Attention to detail is unmatched!"</p>
+                
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="review-info">
+                            <h3>David Chen</h3>
+                            <p>Regular Client • 1 Year</p>
+                        </div>
+                    </div>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -516,135 +556,195 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                </div>
-            </div>
-            
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="avatar">AR</div>
-                    <div class="client-info">
-                        <h3>Alex Rivera</h3>
-                        <p>Loyal Customer • 3 Years</p>
-                    </div>
-                </div>
-                <div class="review-body">
-                    <p>"More than just a haircut - it's an experience. Always leaves me looking fresh and feeling confident."</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
+                    <p>"Rok's chair is my therapy session. Great cuts, great conversation, and always leaves me looking 10x better than when I walked in. Worth every penny!"</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Tools Section -->
-    <section id="tools" style="background-color: #f1f2f6;">
-        <div class="section-header">
+    <section id="tools" class="tools">
+        <div class="container">
             <h2>My Barber Arsenal</h2>
-            <p>The tools of the trade that make the magic happen</p>
-        </div>
-        <div class="tools-container">
-            <div class="tool-item">
-                <div class="tool-img" style="background-image: url('https://images.unsplash.com/photo-1593784991095-a2e8e56e3a8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="tool-info">
-                    <h3>Wahl Magic Clip</h3>
-                    <p>The industry standard for fades and tapers</p>
+            <div class="tools-grid">
+                <!-- Tool 1 -->
+                <div class="tool-card">
+                    <div class="tool-img" style="background-image: url('https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="tool-content">
+                        <h3>Andis Master Cordless</h3>
+                        <p>The workhorse of my shop. Perfect for fades and precision work.</p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="tool-item">
-                <div class="tool-img" style="background-image: url('https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="tool-info">
-                    <h3>Andis T-Outliner</h3>
-                    <p>Perfect for crisp lines and detailed work</p>
+                
+                <!-- Tool 2 -->
+                <div class="tool-card">
+                    <div class="tool-img" style="background-image: url('https://images.unsplash.com/photo-1600857062560-b411c28b4c9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="tool-content">
+                        <h3>Wahl Detailer T-Blade</h3>
+                        <p>For those crisp lines and perfect edging every time.</p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="tool-item">
-                <div class="tool-img" style="background-image: url('https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="tool-info">
-                    <h3>Barber Scissors</h3>
-                    <p>Precision cutting for the perfect finish</p>
+                
+                <!-- Tool 3 -->
+                <div class="tool-card">
+                    <div class="tool-img" style="background-image: url('https://images.unsplash.com/photo-1595341888862-4a8f4b7e3e7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="tool-content">
+                        <h3>Barber Scissors</h3>
+                        <p>Japanese steel for the smoothest scissor cuts.</p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="tool-item">
-                <div class="tool-img" style="background-image: url('https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="tool-info">
-                    <h3>Hot Towel Steamer</h3>
-                    <p>For that luxurious pre-shave experience</p>
+                
+                <!-- Tool 4 -->
+                <div class="tool-card">
+                    <div class="tool-img" style="background-image: url('https://images.unsplash.com/photo-1600857062560-b411c28b4c9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="tool-content">
+                        <h3>Hot Lather Machine</h3>
+                        <p>Because every straight razor shave deserves warm, rich lather.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Videos Section -->
-    <section id="videos">
-        <div class="section-header">
-            <h2>Barber Life Videos</h2>
-            <p>Watch the craft in action - techniques, tips, and behind-the-scenes</p>
+    <section id="videos" class="videos">
+        <div class="container">
+            <h2>Barber Life on Video</h2>
+            <div class="videos-grid">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="video-content">
+                        <h3>Fade Tutorial: From Zero to Hero</h3>
+                        <p>Learn my step-by-step process for creating the perfect fade.</p>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="video-content">
+                        <h3>Barber Shop Vlog: A Day in My Life</h3>
+                        <p>Follow me through a typical day at the shop - clients, cuts, and conversations.</p>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="video-content">
+                        <h3>Tool Maintenance: Keep Your Clippers Running Smooth</h3>
+                        <p>How I clean, oil, and maintain my tools for peak performance.</p>
+                    </div>
+                </div>
+                
+                <!-- Video 4 -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="video-content">
+                        <h3>Client Transformation: From Messy to Magnificent</h3>
+                        <p>Watch this incredible before and after - you won't believe the difference!</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://youtube.com/rokbarber" class="btn" target="_blank">
+                    <i class="fab fa-youtube"></i> Watch All Videos
+                </a>
+            </div>
         </div>
-        <div class="videos-container">
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <div class="play-btn">
-                        <i class="fas fa-play"></i>
+    </section>
+
+    <!-- Appointments Section -->
+    <section id="appointments" class="appointments">
+        <div class="container">
+            <h2>Book Your Appointment</h2>
+            <div class="appointment-container">
+                <div class="success-message" id="successMessage">
+                    Thanks for booking! I'll be in touch soon to confirm your appointment.
+                </div>
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                </div>
-                <div class="video-info">
-                    <h3>Fade Masterclass</h3>
-                    <p>Step-by-step guide to the perfect skin fade</p>
-                </div>
-            </div>
-            
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <div class="play-btn">
-                        <i class="fas fa-play"></i>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                </div>
-                <div class="video-info">
-                    <h3>Beard Shaping Secrets</h3>
-                    <p>How to sculpt the perfect beard shape</p>
-                </div>
-            </div>
-            
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <div class="play-btn">
-                        <i class="fas fa-play"></i>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
                     </div>
-                </div>
-                <div class="video-info">
-                    <h3>Tool Maintenance Tips</h3>
-                    <p>Keep your clippers running like new</p>
-                </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <select id="time" name="time" required>
+                            <option value="">Select a time</option>
+                            <option value="9:00 AM">9:00 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                            <option value="4:00 PM">4:00 PM</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="Haircut">Haircut</option>
+                            <option value="Beard Trim">Beard Trim</option>
+                            <option value="Haircut & Beard">Haircut & Beard</option>
+                            <option value="Fade">Fade</option>
+                            <option value="Straight Razor Shave">Straight Razor Shave</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Special Requests</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your style preferences or any special requests..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Book My Appointment</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="logo">
-                <i class="fas fa-cut"></i>
-                <h2>BARBER LIFE</h2>
-            </div>
-            <p>Honest cuts, real reviews, and authentic barber culture</p>
+    <footer>
+        <div class="container">
+            <div class="logo">ROK<span>BARBER</span></div>
+            <p>Honest cuts, genuine conversations, and barber life.</p>
             
             <div class="social-links">
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
                 <a href="#"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Barber Life. All rights reserved. | Crafted with passion for the barber community</p>
+                <p>&copy; 2023 Rok Barber. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: var(--secondary);"></i> for the barber community</p>
             </div>
         </div>
     </footer>
@@ -659,16 +759,34 @@
                 });
             });
         });
-
-        // Simple animation for video cards on hover
-        const videoCards = document.querySelectorAll('.video-card');
-        videoCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-8px)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
+        
+        // Appointment form submission
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth' });
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        });
+        
+        // Set min date to today for date picker
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+        
+        // Mobile menu toggle (simplified)
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            alert('Mobile menu would open here in a full implementation!');
         });
     </script>
 </body>
